@@ -7,9 +7,7 @@ public:
 
         int ans = 0, start = 0;
         int n = s.length();
-        
         map<char, int> mp;
-
         for(int i=0;i<n;i++)
         {
             char alpha = s[i];
