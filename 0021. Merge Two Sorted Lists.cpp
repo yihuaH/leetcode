@@ -22,7 +22,6 @@ public:
             return list1;
         }
 
-        ListNode* ans;
         while (list1->next!=nullptr && list2->next!=nullptr)
         {
             if(list1->val <= list2->val){
@@ -33,6 +32,5 @@ public:
                 return list2;
             }
         }
-        return ans;
     }
 };
