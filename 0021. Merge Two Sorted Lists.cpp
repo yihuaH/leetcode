@@ -26,11 +26,11 @@ public:
         while (list1->next!=nullptr && list2->next!=nullptr)
         {
             if(list1->val <= list2->val){
-                ans->val = list1->val;
-                list1 = list1->next;
+                list1->next = mergeTwoLists(list1->next,list2);
+                return list1;
             }else{
-                ans->val = list2->val;
-                list1 = list2->next;
+                list2->next = mergeTwoLists(list2->next,list1);
+                return list2;
             }
         }
         return ans;
