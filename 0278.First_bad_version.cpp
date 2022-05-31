@@ -10,7 +10,7 @@ public:
         int ans;
         int i = 1;
         int i2 = i+((n-i)/2);
-        while(i<=){
+        while(i<=n){
           if(isBadVersion(i2)){
             n = i2 - 1;
           }else{
