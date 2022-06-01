@@ -17,4 +17,4 @@ add_executable(leetcode
         0118.pascals_triangle.cpp
         "0119.Pascal's_Triangle II.cpp"
         2011.FinalValueofVariableAfterPerformingOperations.cpp
-        leetcode.h 0026.RemoveDuplicatesFromSortedArray.cpp 0027.RemoveElement.cpp "0028.Implement_strStr().cpp" 0035.Search_Insert_position.cpp 0278.First_bad_version.cpp)
+        leetcode.h 0026.RemoveDuplicatesFromSortedArray.cpp 0027.RemoveElement.cpp "0028.Implement_strStr().cpp" 0035.Search_Insert_position.cpp 0278.First_bad_version.cpp 0053.Maximum_subarry.cpp 0697.Degree_of_an_array.cpp 0645.Set_Mismatch.cpp)
