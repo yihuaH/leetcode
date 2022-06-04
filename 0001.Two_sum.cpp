@@ -25,6 +25,3 @@ public:
     }
 };
 
-int main(){
-    cout << "asd";
-}
