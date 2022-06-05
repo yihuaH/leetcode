@@ -2,8 +2,7 @@
 // Created by Yihua Hao on 5/30/2022.
 //
 
-#include "leetcode.h"
-using namespace std;
+
 
 class Solution {
 public:

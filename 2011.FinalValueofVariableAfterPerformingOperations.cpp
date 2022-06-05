@@ -1,5 +1,4 @@
-#include "leetcode.h"
-using namespace std;
+
 //sdfjj
 class Solution {
 public:

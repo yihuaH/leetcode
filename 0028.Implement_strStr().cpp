@@ -1,9 +1,7 @@
 //
 // Created by Administrator on 4/15/2022.
 //
-#include "leetcode.h"
 
-using namespace std;
 
 class Solution {
 public:

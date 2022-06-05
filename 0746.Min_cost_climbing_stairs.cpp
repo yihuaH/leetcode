@@ -1,7 +1,7 @@
 //
 // Created by Yihua Hao on 6/4/2022.
 //
-#include "leetcode.h"
+#include <vector>
 using namespace std;
 class Solution {
 public:
