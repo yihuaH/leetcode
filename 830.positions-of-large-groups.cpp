@@ -1,7 +1,10 @@
-//
-// Created by Yihua Hao on 6/1/2022.
-//
+/*
+ * @lc app=leetcode id=830 lang=cpp
+ *
+ * [830] Positions of Large Groups
+ */
 
+// @lc code=start
 class Solution {
 public:
   int maxSubArray(vector<int>& nums) {
@@ -19,3 +22,5 @@ public:
     return ans;
   }
 };
+// @lc code=end
+
