@@ -15,7 +15,6 @@ class Solution:
                 if char2 not in s:
                     t = t.replace(char2, "")
                     continue
-                print(t+'\n')
                 if char == char2:
                     tempStr += char2
                     t = t.replace(char2, "", 1)
