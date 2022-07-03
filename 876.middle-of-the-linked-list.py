@@ -13,6 +13,14 @@ class ListNode:
         self.next = next
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        
+        length = 0
+        temp = head
+        while head:
+            length +=1
+            head = head.next
+        length = int(length / 2) 
+        for i in range(length):
+              temp = temp.next
+        return temp
 # @lc code=end
 
