@@ -12,11 +12,16 @@ class Solution:
     def minCostClimbingStairs(self, cost: list[int]) -> int:
         if len(cost)==0:
             return 0
-        dp = [0]*len(cost)
+        cost.append(0)
+        dp = [0]*(len(cost))
         dp[0] = cost[0]
         dp[1] = cost[1]
         for i in range(2,len(cost)):
-            dp[i] = min()
+            a = dp[i-1] + cost[i]
+            b = dp[i-2] + cost[i]
+            dp[i] = min(a,b)
+            print(i,dp[i])
+        return dp[len(cost)-1]
         
 # @lc code=end
 
