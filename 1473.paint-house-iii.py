@@ -6,7 +6,7 @@
 
 # @lc code=start
 class Solution:
-    def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
+    def minCost(self, houses: list[int], cost: list[list[int]], m: int, n: int, target: int) -> int:
         # maps (i, t, p) -> the minimum cost to paint houses i <= h < m with t neighborhoods, where house i - 1 is color p
         dp = {}
         
