@@ -5,7 +5,6 @@
 #
 
 # @lc code=start
-from cmath import cos
 
 
 class Solution:
