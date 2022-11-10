@@ -1,44 +1,60 @@
-from distutils.command.install_lib import install_lib
+from re import T
+from unicodedata import digit
 
 
 class Solution:
-    def fillCups(self, amount: list[int]) -> int:
-        amount.sort()
-        ans = 0
-        while sum(amount) != 0:
-            amount[2] -= 1
-            if amount[1] != 0:
-                amount[1] -= 1
-            ans += 1
-            amount.sort()
+    def numberOfPairs(self, nums: list[int]) -> list[int]:
+        count = 0
+        if len(nums) == 1:
+            return [0, 1]
+        check = [0] * len(nums)
+        for i in range(len(nums)):
+            if check[i] == 1:
+                continue
+            for j in range(i+1, len(nums)):
+                if check[j] == 1:
+                    continue
+                if nums[i] == nums[j]:
+                    count += 1
+                    check[i] = 1
+                    check[j] = 1
+                    
+        return [count, len(nums)-(2*count)]
+
+class Solution:
+    def maximumSum(self, nums: list[int]) -> int:
+        digit_sum = []
+        temp_nums = [[]]
+        for i in nums:
+            sum = 0
+            for digit in str(i): 
+                sum += int(digit)
+            if sum not in digit_sum:      
+                digit_sum.append(sum)
+                temp_nums.append([])
+                temp_nums[digit_sum.index(sum)].append(i)
+            else:
+                temp_nums[digit_sum.index(sum)].append(i)
+        ans = -1
+        print(temp_nums)
+        for i in temp_nums:
+            if len(i) < 2:
+                continue
+            else:
+                i.sort(reverse=True)
+                temp_ans = i[0]+i[1]
+                ans = max(ans, temp_ans)
         return ans
-            
-class SmallestInfiniteSet:
-    intlist = set()
-    min_int = 0
     
-    def __init__(self):
-        for i in range(1000):
-            self.intlist.add(i+1)
+    class Solution:
+    def smallestTrimmedNumbers(self, nums: list[str], queries: list[list[int]]) -> list[int]:
+        ans = []
+        for k, trim in queries:
+            tmp = []
+            for i, num in enumerate(nums):
+                tmp.append([int(num[-trim:]), i])
+            tmp.sort(reverse=True)
+            ans.append(tmp[-k][1])
+        return ans
         
-    def popSmallest(self) -> int:
-        self.min_int = min(self.intlist)
-        self.intlist.remove(self.min_int)
-        return self.min_int
-
-    def addBack(self, num: int) -> None:
-        self.intlist.add(num)
         
-        
-
-
-# Your SmallestInfiniteSet object will be instantiated and called as such:
-# obj = SmallestInfiniteSet()
-# param_1 = obj.popSmallest()
-# obj.addBack(num)
-
-class Solution:
-    def canChange(self, start: str, target: str) -> bool:
-        if start.replace('_',"") != target.replace('_',""):
-            return False
-        else:

@@ -3,9 +3,8 @@
 #
 # [102] Binary Tree Level Order Traversal
 #
-from tkinter.tix import Tree
+from collections import deque
 from typing import *
-from unittest import result
 # @lc code=start
 # Definition for a binary tree node.
 class TreeNode:
@@ -15,21 +14,45 @@ class TreeNode:
         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        if not root:
-            return []
-        ans = []
-        self.tracersal(root, 0, ans)
-        return ans
+        '''if not root: return []
+        queue, res = deque([root]), []
+        
+        while queue:
+            cur_level, size = [], len(queue)
+            for i in range(size):
+                node = queue.popleft()
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
+                cur_level.append(node.val)
+            res.append(cur_level)
+        return res'''
     
-    def tracersal(self, root: Optional[TreeNode], level, ans:List[List[int]]):
         if not root:
             return
-        if len(ans) <= level:
-            ans.append([])
-        ans[level].append(root.val)
+        ans = [[root.val]]
+        temp = []
+        level = [root]
+        
+        while True:
+            while level:
+                cur_node = level.pop(0)
+                if cur_node.left:
+                    temp.append(cur_node.left)
+                if cur_node.right:
+                    temp.append(cur_node.right)
+            if not temp:
+                break
+            temp_int = []
+            for i in temp:
+                temp_int.append(i.val)
+            ans.append(temp_int)
+            print(ans)
+            level = temp.copy()
+            temp.clear()
             
-        self.tracersal(root.left, level+1,ans)
-        self.tracersal(root.right, level +1,ans)
+        return ans
         
 # @lc code=end
 
