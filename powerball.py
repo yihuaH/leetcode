@@ -1,6 +1,6 @@
 import random
-win_blue_number = [22,24,40,52,64]
-win_red_number = 10
+win_blue_number = [18,21,25,46,64]
+win_red_number = 21
 
 win = False
 my_blueballs = []
